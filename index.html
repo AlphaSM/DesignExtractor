@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Design Element Extractor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="app-header">
+        <div class="container">
+            <h1>Website Design Element Extractor</h1>
+            <p class="subtitle">Extract and analyze design elements from any website</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="input-section">
+            <form id="extractForm" class="url-form">
+                <div class="input-group">
+                    <input type="text" id="urlInput" placeholder="Enter website URL (e.g., https://example.com)" required>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-search"></i>
+                        Extract Elements
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section id="results" class="results-section"></section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container">
+            <p>Website Design Element Extractor © 2024</p>
+        </div>
+    </footer>
+
+    <template id="loading-template">
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <p>Extracting design elements...</p>
+        </div>
+    </template>
+
+    <template id="error-template">
+        <div class="error-message">
+            <i class="fas fa-exclamation-circle"></i>
+            <p></p>
+        </div>
+    </template>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
