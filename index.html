@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Element Extractor</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-6">Design Element Extractor</h1>
+        
+        <form id="extractForm" class="mb-8">
+            <div class="flex gap-4">
+                <input 
+                    type="url" 
+                    id="urlInput" 
+                    placeholder="Enter website URL" 
+                    required
+                    class="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none"
+                >
+                <button 
+                    type="submit"
+                    class="rounded-lg bg-blue-500 px-6 py-2 text-white hover:bg-blue-600 focus:outline-none"
+                >
+                    Extract
+                </button>
+            </div>
+        </form>
+
+        <div id="results" class="space-y-6"></div>
+    </div>
+
+    <!-- Loading template -->
+    <template id="loading-template">
+        <div class="flex items-center justify-center p-12">
+            <div class="text-center">
+                <div class="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
+                <p class="text-gray-600">Extracting design elements...</p>
+            </div>
+        </div>
+    </template>
+
+    <!-- Error template -->
+    <template id="error-template">
+        <div class="rounded-lg border border-red-200 bg-red-50 p-4 text-red-600">
+            <p></p>
+        </div>
+    </template>
+
+    <!-- Main script -->
+    <script src="script.js"></script>
+</body>
+</html>
