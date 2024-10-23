@@ -3,58 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Design Element Extractor</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Design Element Extractor</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
 </head>
-<body>
-    <header class="app-header">
-        <div class="container">
-            <h1>Website Design Element Extractor</h1>
-            <p class="subtitle">Extract and analyze design elements from any website</p>
-        </div>
-    </header>
+<body class="bg-gray-50">
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-6">Design Element Extractor</h1>
+        
+        <form id="extractForm" class="mb-8">
+            <div class="flex gap-4">
+                <input 
+                    type="url" 
+                    id="urlInput" 
+                    placeholder="Enter website URL" 
+                    required
+                    class="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none"
+                >
+                <button 
+                    type="submit"
+                    class="rounded-lg bg-blue-500 px-6 py-2 text-white hover:bg-blue-600 focus:outline-none"
+                >
+                    Extract
+                </button>
+            </div>
+        </form>
 
-    <main class="container">
-        <section class="input-section">
-            <form id="extractForm" class="url-form">
-                <div class="input-group">
-                    <input type="text" id="urlInput" placeholder="Enter website URL (e.g., https://example.com)" required>
-                    <button type="submit" class="btn-primary">
-                        <i class="fas fa-search"></i>
-                        Extract Elements
-                    </button>
-                </div>
-            </form>
-        </section>
+        <div id="results" class="space-y-6"></div>
+    </div>
 
-        <section id="results" class="results-section"></section>
-    </main>
-
-    <footer class="app-footer">
-        <div class="container">
-            <p>Website Design Element Extractor © 2024</p>
-        </div>
-    </footer>
-
+    <!-- Loading template -->
     <template id="loading-template">
-        <div class="loading-container">
-            <div class="loading-spinner"></div>
-            <p>Extracting design elements...</p>
+        <div class="flex items-center justify-center p-12">
+            <div class="text-center">
+                <div class="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
+                <p class="text-gray-600">Extracting design elements...</p>
+            </div>
         </div>
     </template>
 
+    <!-- Error template -->
     <template id="error-template">
-        <div class="error-message">
-            <i class="fas fa-exclamation-circle"></i>
+        <div class="rounded-lg border border-red-200 bg-red-50 p-4 text-red-600">
             <p></p>
         </div>
     </template>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <!-- Main script -->
+    <script src="script.js"></script>
 </body>
 </html>
