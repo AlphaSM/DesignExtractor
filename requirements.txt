@@ -5,15 +5,16 @@ charset-normalizer==3.4.0
 click==8.1.7
 cssutils==2.11.1
 flask==3.0.3
+gunicorn==23.0.0
 idna==3.10
 importlib-metadata==8.5.0
 itsdangerous==2.2.0
 jinja2==3.1.4
 MarkupSafe==3.0.2
 more-itertools==10.5.0
+packaging==24.1
 requests==2.32.3
 soupsieve==2.6
 urllib3==2.2.3
 werkzeug==3.0.4
 zipp==3.20.2
-gunicorn
